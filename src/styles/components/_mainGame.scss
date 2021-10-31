@@ -1,0 +1,102 @@
+@use "../settings/colors" as c;
+
+.maingame_content{
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 600px;
+    width: 100%;
+    height: 100%;
+    h1{
+        width: 100%;
+        text-align: left;
+        font-size: 20px;
+    }
+    h2{
+        width: 100%;
+        font-size: 18px;
+        text-align: left;
+        color: c.$grey_dark;
+        font-weight: 400;
+    }
+    img{
+        height: 250px;
+        width: auto;
+    }
+}
+
+.data_container{
+    display: flex;
+    width: 100%;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 5px;
+
+    p{
+        background-color: c.$blue_light;
+        font-weight: 500;
+        padding: 5px 15px;
+        border-radius: 5px;
+        color: c.$secundary;
+    }
+}
+
+.buttons_list{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 5px;
+    text-align: center;
+}
+
+.score-max{
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    p{
+        color: black;
+        border-radius: 5px;
+        font-size: 20px;
+        padding: 10px;
+        background-color: white;
+    }
+
+    a{
+        width: auto;
+        text-decoration: none;
+        padding: 10px;
+    }
+}
+
+@media (max-width: 500px) {
+    .maingame_content{
+        .buttons_list{
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+            text-align: center;
+        }
+    }
+}
+
+@media (max-width: 350px) {
+    .maingame_content{
+        padding: 10px;
+        h1{
+            font-size: 16px;
+        }
+        img{
+            width: 100%;
+            height: auto;
+        }
+    }
+}

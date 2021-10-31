@@ -1,0 +1,46 @@
+@use "../settings/colors" as c;
+
+.navbar_container{
+    display: flex;
+    justify-content: space-between;
+    background-color: c.$primary;
+    padding: 10px 20px;
+    color: c.$blue_dark;
+    font-weight: 500;
+    font-size: 20px;
+    height: 60px;
+    align-items: center;
+    height: 70px;
+
+    a{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height:100%;
+        img{
+            width: 120px;
+        }
+    }
+}
+
+@media (max-width: 350px) {
+    .navbar_container{
+        display: flex;
+        justify-content: space-between;
+        background-color: c.$primary;
+        padding: 10px 20px;
+        color: c.$blue_dark;
+        font-weight: 500;
+        font-size: 20px;
+        height: 60px;
+        align-items: center;
+        height: 70px;
+    
+        a{
+            height:100%;
+            img{
+                width: 90px;
+            }
+        }
+    }
+}

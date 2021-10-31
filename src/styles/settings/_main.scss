@@ -1,0 +1,19 @@
+@use "../settings/colors" as c;
+
+*{
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: c.$grey;
+    min-height: 100vh;
+    width: 100vw;
+    min-width: 300px;
+    min-height: 600px;
+}

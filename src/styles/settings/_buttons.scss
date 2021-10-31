@@ -1,0 +1,29 @@
+@use "../settings/colors" as c;
+
+.btn{
+    width: 100%;
+    display: block;
+    padding: 13px 0px;
+    border: none;
+    background-color: c.$secundary;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    font-size: 17px;
+    font-weight: 600;
+    transition: .4s;
+    &:hover{
+        background-color: c.$secundary_dark;
+    }
+}
+
+.btn-danger:disabled,
+.btn-danger[disabled]{
+    background-color: c.$blue_light;
+    color: c.$grey_light2;
+}
+
+.btn-success:disabled,
+.btn-success[disabled]{
+    background-color: lighten($color: c.$tertiary, $amount: 5);
+}
