@@ -25,7 +25,7 @@ export const MainGame: React.FC<Props> = ({products, setProducts}) => {
                     <Link to="/">
                         <img src={logo} alt="" />
                     </Link>
-                    <p>Puntaje: {products.length}</p>
+                    <p>Puntaje: <b>{products.length}</b></p>
                 </nav>
                 {
                     product === undefined ? 
