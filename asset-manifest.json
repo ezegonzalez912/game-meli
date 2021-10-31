@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/game-meli/static/css/main.13fcff0e.chunk.css",
-    "main.js": "/game-meli/static/js/main.08aa5092.chunk.js",
-    "main.js.map": "/game-meli/static/js/main.08aa5092.chunk.js.map",
+    "main.css": "/game-meli/static/css/main.7bb15dc2.chunk.css",
+    "main.js": "/game-meli/static/js/main.6fffab59.chunk.js",
+    "main.js.map": "/game-meli/static/js/main.6fffab59.chunk.js.map",
     "runtime-main.js": "/game-meli/static/js/runtime-main.37177855.js",
     "runtime-main.js.map": "/game-meli/static/js/runtime-main.37177855.js.map",
     "static/js/2.eda02d12.chunk.js": "/game-meli/static/js/2.eda02d12.chunk.js",
     "static/js/2.eda02d12.chunk.js.map": "/game-meli/static/js/2.eda02d12.chunk.js.map",
     "index.html": "/game-meli/index.html",
-    "static/css/main.13fcff0e.chunk.css.map": "/game-meli/static/css/main.13fcff0e.chunk.css.map",
+    "static/css/main.7bb15dc2.chunk.css.map": "/game-meli/static/css/main.7bb15dc2.chunk.css.map",
     "static/js/2.eda02d12.chunk.js.LICENSE.txt": "/game-meli/static/js/2.eda02d12.chunk.js.LICENSE.txt",
     "static/media/logo.787f4505.png": "/game-meli/static/media/logo.787f4505.png"
   },
   "entrypoints": [
     "static/js/runtime-main.37177855.js",
     "static/js/2.eda02d12.chunk.js",
-    "static/css/main.13fcff0e.chunk.css",
-    "static/js/main.08aa5092.chunk.js"
+    "static/css/main.7bb15dc2.chunk.css",
+    "static/js/main.6fffab59.chunk.js"
   ]
 }
