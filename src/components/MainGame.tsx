@@ -30,8 +30,8 @@ export const MainGame: React.FC<Props> = ({products, setProducts}) => {
                 {
                     product === undefined ? 
                         <div className="score-max">
-                            <p>Llegaste al puntaje maximo!</p>
-                            <Link className="btn" to="/">Prueba con otra categoria</Link>
+                            <p>¡Llegaste al puntaje máximo!</p>
+                            <Link className="btn" to="/">Prueba con otra categoría</Link>
                         </div>
                     :
                     <main className="maingame_content">

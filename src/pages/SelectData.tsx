@@ -25,14 +25,14 @@ export const SelectData = () => {
             <div className="select-data_container">
                 <img src={logo} alt="icon" style={{padding:"10px"}}/>
                 <SelectDataList 
-                    title="Selecciona tu pais"
+                    title="Selecciona tu país"
                     list={sites}
                     item={site}
                     changeFunction={changeSite}
                 />
                 {
                     categories && <SelectDataList 
-                        title="Selecciona una Categoria"
+                        title="Selecciona una Categoría"
                         list={categories}
                         item={category}
                         changeFunction={changeCategory}
@@ -40,7 +40,7 @@ export const SelectData = () => {
                 }
                 {
                     (site.id !== "" && category.id !== "") &&
-                    <Link className="btn" to={`/site/${site.id}/category/${category.id}`}>Comenzar a jugar!</Link>
+                    <Link className="btn" to={`/site/${site.id}/category/${category.id}`}>¡Comenzar a jugar!</Link>
                 }
             </div>
         </>
