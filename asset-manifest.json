@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/game-meli/static/css/main.13fcff0e.chunk.css",
+    "main.js": "/game-meli/static/js/main.7272ae21.chunk.js",
+    "main.js.map": "/game-meli/static/js/main.7272ae21.chunk.js.map",
+    "runtime-main.js": "/game-meli/static/js/runtime-main.37177855.js",
+    "runtime-main.js.map": "/game-meli/static/js/runtime-main.37177855.js.map",
+    "static/js/2.3d459cbc.chunk.js": "/game-meli/static/js/2.3d459cbc.chunk.js",
+    "static/js/2.3d459cbc.chunk.js.map": "/game-meli/static/js/2.3d459cbc.chunk.js.map",
+    "index.html": "/game-meli/index.html",
+    "static/css/main.13fcff0e.chunk.css.map": "/game-meli/static/css/main.13fcff0e.chunk.css.map",
+    "static/js/2.3d459cbc.chunk.js.LICENSE.txt": "/game-meli/static/js/2.3d459cbc.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.37177855.js",
+    "static/js/2.3d459cbc.chunk.js",
+    "static/css/main.13fcff0e.chunk.css",
+    "static/js/main.7272ae21.chunk.js"
+  ]
+}
