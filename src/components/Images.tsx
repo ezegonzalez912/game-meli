@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { Image } from "../../types/types"
+import { Image } from "../types/types"
 
 interface Props {
     id: string | undefined;

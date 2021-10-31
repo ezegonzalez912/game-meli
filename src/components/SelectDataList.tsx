@@ -1,4 +1,4 @@
-import { Category, Site } from "../../types/types"
+import { Category, Site } from "../types/types"
 
 interface Props {
     title: string;

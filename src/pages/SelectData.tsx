@@ -11,7 +11,9 @@ export const SelectData = () => {
     const {data, setData} = useContext(DataContext);
     const {sites, categories} = useData(data);
     
-    const changeSite = (site: Site) => setData({...data, site})
+    const changeSite = (site: Site) => {
+        setData({site, category: {id: "", name: ""}});
+    }
     const changeCategory = (category: Category) => setData({...data, category})
 
     const { site, category } = data;
