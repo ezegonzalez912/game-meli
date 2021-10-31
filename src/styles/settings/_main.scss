@@ -12,8 +12,8 @@ body{
     justify-content: center;
     align-items: center;
     background-color: c.$grey;
-    min-height: 100vh;
-    width: 100vw;
+    width: auto;
+    height: 100vh;
     min-width: 300px;
     min-height: 600px;
 }
