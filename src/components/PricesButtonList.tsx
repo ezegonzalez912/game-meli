@@ -1,6 +1,6 @@
 import { useState } from "react"
-import { usePrices } from "../../hooks/usePrices"
-import { Product } from "../../types/types";
+import { usePrices } from "../hooks/usePrices"
+import { Product } from "../types/types";
 
 interface Props {
     setProducts: (products:Product[] | any) => void;

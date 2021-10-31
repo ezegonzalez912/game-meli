@@ -1,9 +1,10 @@
 import { useContext } from "react"
 import { Link } from "react-router-dom";
-import { DataContext } from "../../context/DataContext"
-import { useData } from "../../hooks/useData";
-import { Category, Site } from "../../types/types"
-import { SelectDataList } from "../feactures/SelectDataList";
+import { DataContext } from "../context/DataContext"
+import { useData } from "../hooks/useData";
+import { Category, Site } from "../types/types"
+import { SelectDataList } from "../components/SelectDataList";
+import logo from "../assets/logo.png";
 
 export const SelectData = () => {
 
@@ -20,7 +21,7 @@ export const SelectData = () => {
     return (
         <>
             <div className="select-data_container">
-                <img src="./logo.png" alt="icon" style={{padding:"10px"}}/>
+                <img src={logo} alt="icon" style={{padding:"10px"}}/>
                 <SelectDataList 
                     title="Selecciona tu pais"
                     list={sites}

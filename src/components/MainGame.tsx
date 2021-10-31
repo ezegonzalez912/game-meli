@@ -1,10 +1,11 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
-import { DataContext } from "../../context/DataContext";
-import { useProducts } from "../../hooks/useProducts";
-import { Product } from "../../types/types";
+import { DataContext } from "../context/DataContext";
+import { useProducts } from "../hooks/useProducts";
+import { Product } from "../types/types";
 import { Images } from "./Images";
 import { PricesButtonList } from "./PricesButtonList";
+import logo from "../assets/logo.png";
 
 interface Props {
     products: Product[];
@@ -22,7 +23,7 @@ export const MainGame: React.FC<Props> = ({products, setProducts}) => {
             <div className="game-card_container">
                 <nav className="navbar_container">
                     <Link to="/">
-                        <img src="/logo.png" alt="" />
+                        <img src={logo} alt="" />
                     </Link>
                     <p>Puntaje: {products.length}</p>
                 </nav>

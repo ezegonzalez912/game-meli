@@ -4,8 +4,8 @@ import {
     Route,
     Redirect
 } from "react-router-dom";
-import { Game } from "./components/pages/Game";
-import { SelectData } from "./components/pages/SelectData";
+import { Game } from "./pages/Game";
+import { SelectData } from "./pages/SelectData";
 
 export const AppRouter = () => {
     return (
