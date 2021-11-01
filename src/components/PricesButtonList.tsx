@@ -53,8 +53,8 @@ export const PricesButtonList: React.FC<Props> = ({setProducts, product}) => {
             {
                 resetGame && 
                 <div className="buttons_list" style={{gridTemplateColumns:"1fr 1fr"}}>
-                    <button className="btn" onClick={restardGame}>Reiniciar</button>
-                    <a className="btn" href={permalink} target="_blank" rel="noreferrer">Ver producto</a>
+                    <button className="btn" onClick={restardGame}>Seguir jugando</button>
+                    <a className="btn" href={permalink} target="_blank" rel="noreferrer">Comprar</a>
                 </div>
             }
         </div>

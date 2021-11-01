@@ -9,14 +9,14 @@ export const useData = (data: Data) => {
     useEffect(() => {
         fetch("https://api.mercadolibre.com/sites/")
         .then(res => res.json())
-        .then(res => setSites(res))
+        .then(res => setSites(res.sort((a:Site, b:Site) => a.name > b.name ? 1 : -1)))
     }, [])
 
     useEffect(() => {
         if(data.site.id !== ""){
             fetch(`https://api.mercadolibre.com/sites/${data.site.id}/categories`)
             .then(res => res.json())
-            .then(res => setCategories(res))
+            .then(res => setCategories(res.sort((a:Category, b:Category) => a.name > b.name ? 1 : -1)))
         }
     }, [data])
 
