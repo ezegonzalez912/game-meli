@@ -46,6 +46,7 @@ export const PricesButtonList: React.FC<Props> = ({setProducts, product}) => {
                             className={`btn ${status && `btn-${priceOption === price ? 'success' : 'danger'}`}`}
                             >
                             {Math.trunc(priceOption).toLocaleString('en-US', { style: 'currency', currency: 'USD' })}
+                            {priceOption === price && "a"}
                         </button>
                     ))
                 }
