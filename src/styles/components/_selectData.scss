@@ -21,33 +21,42 @@
         text-decoration: none;
     }
 
-    .select-data_button-active{
-        background-color: c.$secundary;
-        color: white;
-    }
-
-    button{
-        border: none;
-        background-color: c.$blue_light;
-        font-weight: 500;
-        padding: 5px 15px;
-        border-radius: 5px;
-        color: c.$secundary;
-        cursor: pointer;
-        transition: .1s;
-
-        &:hover{
-            background-color: c.$secundary;
-            color: white;
-        }
-    }
-
     &_options{
         justify-content: center;
         align-items: center;
         gap: 5px;
         display: flex;
         flex-wrap: wrap;
+        margin: 10px 0;
+
+        a, button{
+            font-size: 13px;
+            border: none;
+            background-color: c.$blue_light;
+            font-weight: 500;
+            padding: 5px 15px;
+            border-radius: 5px;
+            color: c.$secundary;
+            cursor: pointer;
+            transition: .1s;
+        }
+
+        a:hover{
+            background-color: c.$secundary;
+            color: white;
+        }
+    }
+
+    @media not all and (pointer: coarse) {
+        button:hover {
+            background-color: c.$secundary;
+            color: white;
+        }
+    }
+
+    .select-data_button-active{
+        background-color: c.$secundary;
+        color: white;
     }
 }
 

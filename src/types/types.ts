@@ -13,7 +13,8 @@ export interface Category {
 
 export interface Site {
     id: string,
-    name: string
+    name: string,
+    default_currency_id: string
 }
 
 export interface Image {
@@ -22,5 +23,12 @@ export interface Image {
 
 export interface Data {
     site: Site,
-    category: Category
+    category: Category[]
+}
+
+export interface Currency {
+    id: string;
+    symbol: string;
+    description: string;
+    decimal_places: number;
 }

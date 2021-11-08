@@ -1,4 +1,5 @@
 import { useState } from "react"
+import { useCurrency } from "../hooks/useCurrency";
 import { usePrices } from "../hooks/usePrices"
 import { Product } from "../types/types";
 
@@ -14,8 +15,11 @@ export const PricesButtonList: React.FC<Props> = ({setProducts, product}) => {
 
     const [status, setStatus] = useState<boolean>(false)
     const [resetGame, setResetGame] = useState<boolean>(false)
+    const [buttonActive, setButtonActive] = useState<string | null>(null)
 
-    const ckeckStatus = (priceCheck:number) => {
+    const currency = useCurrency();
+
+    const ckeckStatus = (priceCheck:number, e:any) => {
         if(priceCheck === price){
             setStatus(true)
             setTimeout(() => {
@@ -23,29 +27,34 @@ export const PricesButtonList: React.FC<Props> = ({setProducts, product}) => {
                 setStatus(false)
             }, 500)
         }else{
+            setButtonActive(e.target.id)
             setStatus(true)
             setResetGame(true)
         }
     }
 
     const restardGame = () => {
+        setButtonActive(null)
         setResetGame(false)
         setStatus(false)
         setProducts([])
-    }   
+    }
 
     return (
         <div style={{width:"100%",display:"flex",flexDirection:"column",gap:"5px"}}>
-            <h2>Adivina el precio:</h2>
+            <h2>Acierta el precio:</h2>
             <section className="buttons_list">
                 {
-                    prices.map(priceOption => (
+                    prices.map((priceOption, index) => (
                         <button 
-                            key={priceOption} onClick={() => ckeckStatus(priceOption)} 
+                            id={`${index}`}
+                            key={priceOption} onClick={(e) => ckeckStatus(priceOption, e)} 
                             disabled={status}
-                            className={`btn ${status && `btn-${priceOption === price ? 'success' : 'danger'}`}`}
-                            >
-                            {Math.trunc(priceOption).toLocaleString('en-US', { style: 'currency', currency: 'USD' })}
+                            className={`btn ${status && `btn-${priceOption === price ? 'success' : 'danger'}`}
+                                            ${buttonActive === `${index}` && 'btn-error'}`}
+                        >
+                            {currency && currency.symbol}
+                            {Math.trunc(priceOption).toLocaleString('en-US', {style: 'currency',currency: 'USD'}).slice(1, -1)}
                             {/* {priceOption === price && "a"} */}
                         </button>
                     ))

@@ -24,7 +24,7 @@
         font-weight: 400;
     }
     img{
-        max-height: 250px;
+        max-height: 200px;
         width: auto;
         max-width: 100%;
     }
@@ -35,7 +35,7 @@
     width: 100%;
     justify-content: flex-start;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 5px;
     margin-bottom: 5px;
 
     p{
@@ -44,6 +44,7 @@
         padding: 5px 15px;
         border-radius: 5px;
         color: c.$secundary;
+        font-size: 13px;
     }
 }
 
@@ -63,7 +64,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    margin-bottom: 30px;
+    margin: 25px 0;
 
     p{
         color: black;

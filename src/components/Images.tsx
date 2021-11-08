@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import { getImages } from "../services/getImages"
 import { Image } from "../types/types"
 
 interface Props {
@@ -11,9 +12,8 @@ export const Images: React.FC<Props>= ({id, thumbnail}) => {
     const [images, setImages] = useState<Image[] | null>(null)
 
     useEffect(() => {
-        fetch(`https://api.mercadolibre.com/products/${id}`)
-        .then(res => res.json())
-        .then(res => setImages(res.pictures))
+        getImages(id)
+        .then(res => res ? setImages(res.pictures) : setImages(null))
     }, [id])
 
     return (

@@ -1,24 +1,37 @@
 import { useEffect, useState } from "react"
-import { Category, Data, Site } from "../types/types"
+import { Category, Site } from "../types/types"
+import { useParams, useLocation } from 'react-router'
+import queryString from "query-string";
+import { getSites } from "../services/getSites";
+import { getCategories } from "../services/getCategories";
 
-export const useData = (data: Data) => {
+export const useData = () => {
 
-    const [sites, setSites] = useState<Site[] | null>(null)
-    const [categories, setCategories] = useState<Category[] | null>(null)
+    const { idSite }  = useParams<{idCategory: string, idSite: string}>();
+
+    const location = useLocation();
+
+    const { q } = queryString.parse(location.search);
+
+    const [site, setSite] = useState<Site>({id: '', name: '', default_currency_id:''});
+    const [categories, setCategories] = useState<Category[]>([]);
 
     useEffect(() => {
-        fetch("https://api.mercadolibre.com/sites/")
-        .then(res => res.json())
-        .then(res => setSites(res.sort((a:Site, b:Site) => a.name > b.name ? 1 : -1)))
+        const categoriesURL = Array.isArray(q) ? [...q] : [q];
+
+        getSites()
+        .then(res => {
+            const site = res.filter((site:Site) => site.id === idSite)
+            setSite(site[0])
+        })
+
+        getCategories(idSite)
+        .then(res => {
+            const category = res.filter((category:Category) => categoriesURL.includes(category.id))
+            setCategories(category)
+        })
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
-    useEffect(() => {
-        if(data.site.id !== ""){
-            fetch(`https://api.mercadolibre.com/sites/${data.site.id}/categories`)
-            .then(res => res.json())
-            .then(res => setCategories(res.sort((a:Category, b:Category) => a.name > b.name ? 1 : -1)))
-        }
-    }, [data])
-
-    return { sites, categories }
+    return { site, categories };
 }

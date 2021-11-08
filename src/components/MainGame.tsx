@@ -1,11 +1,12 @@
-import { useContext } from "react";
 import { Link } from "react-router-dom";
-import { DataContext } from "../context/DataContext";
+import { useParams } from 'react-router'
 import { useProducts } from "../hooks/useProducts";
 import { Product } from "../types/types";
 import { Images } from "./Images";
 import { PricesButtonList } from "./PricesButtonList";
 import logo from "../assets/logo.png";
+import { useData } from "../hooks/useData";
+import { Skeleton } from "./Skeleton";
 
 interface Props {
     products: Product[];
@@ -14,16 +15,17 @@ interface Props {
 
 export const MainGame: React.FC<Props> = ({products, setProducts}) => {
 
-    const { data } = useContext(DataContext);
-    const {site, category} = data;
+    const { idSite }  = useParams<{idSite: string}>();
 
-    const { product } = useProducts(products)
+    const { site, categories } = useData();
+
+    let product = useProducts(products);
 
     return (
             <div className="game-card_container">
                 <nav className="navbar_container">
                     <Link to="/">
-                        <img src={logo} alt="" />
+                        <img src={logo} alt="MercadoLibre-Logo" />
                     </Link>
                     <p>Puntaje: <b>{products.length}</b></p>
                 </nav>
@@ -31,19 +33,26 @@ export const MainGame: React.FC<Props> = ({products, setProducts}) => {
                     product === undefined ? 
                         <div className="score-max">
                             <p>¡Llegaste al puntaje máximo!</p>
-                            <Link className="btn" to="/">Prueba con otra categoría</Link>
+                            <Link className="btn" to={`/site/${idSite}`}>Prueba con otra categoría</Link>
                         </div>
                     :
                     <main className="maingame_content">
                         <div style={{width:"100%"}}>
                             <section className="data_container">
                                 <p>{site.name}</p>
-                                <p>{category.name}</p>
+                                {categories.map((category) => <p key={category.id}>{category.name}</p>)}
                             </section>
-                            <h1 className="maingame_content_title">{product?.title}</h1>
+                            {
+                                product ? <h1 className="maingame_content_title">{product?.title}</h1>
+                                : <Skeleton height={"25"} width={"100%"}/>
+                            }
                         </div>
-                        <Images id={product?.catalog_product_id} thumbnail={product?.thumbnail}/>
-                        {product && <PricesButtonList setProducts={setProducts} product={product}/>}
+                            {
+                                product ? <Images id={product?.catalog_product_id} thumbnail={product?.thumbnail}/>
+                                : <Skeleton height={"300"} width={"100%"}/>
+                            }
+                        {product ? <PricesButtonList setProducts={setProducts} product={product}/>
+                        : <Skeleton height={"60"} width={"100%"}/>}
                     </main>
                 }
             </div>

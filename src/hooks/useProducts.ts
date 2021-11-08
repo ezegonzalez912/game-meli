@@ -1,22 +1,33 @@
 import { useEffect, useState } from "react"
-import { useParams } from "react-router";
+import { useHistory, useLocation, useParams } from "react-router";
 import { getRamdonProduct } from "../helpers/getRamdonProduct";
-import { getRamdonProductByCategory } from "../services/getRamdonProductByCategory"
+import { getProductByCategory } from "../services/getProductByCategory"
 import { Product } from "../types/types";
+import queryString from "query-string";
 
 export const useProducts = (products:Product[]) => {
 
     const [product, setProduct] = useState<Product | null | undefined>(null)
-    const { idSite, idCategory }  = useParams<{idCategory?: string, idSite?: string}>();
+    const { idSite, idCategory }  = useParams<{idCategory: string, idSite: string}>();
+
+    const location = useLocation();
+    const history = useHistory();
+    const { q } = queryString.parse(location.search);
 
     useEffect(() => {
-        getRamdonProductByCategory(idCategory, idSite)
-            .then( res => {
-            const { results } = res
-            setProduct(getRamdonProduct(results, products))
-        })
+        if(!q){
+            return history.push("/");
+        }else {
+            const categories = Array.isArray(q) ? [...q] : [q];
+            getProductByCategory(categories, idSite)
+            .then((res:Product[]) => {
+                const randomProduct = getRamdonProduct(res, products);
+                setProduct(randomProduct);
+            })
+            .catch(err => console.log(err))
+        }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [products, idCategory])
 
-    }, [products, idCategory, idSite])
-
-    return { product }
+    return product;
 }

@@ -13,9 +13,11 @@ export const ProductsHistory: React.FC<Props>= ({products}) => {
             </nav>
             <section className="product-history_content">
                 {
+                    products.length > 0 ?
                     products.map((product:Product, index) => (
                         <CardProduct key={index} product={product}/>
                     ))
+                    : <p style={{textAlign: "center", marginTop: "25px"}}>~ Comienza a jugar ~</p>
                 }
             </section>
         </div>
