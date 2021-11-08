@@ -32,7 +32,7 @@ export const SelectCategories = () => {
     return (
         <div className="select-data_container">
             <img src={logo} alt="icon" style={{padding:"10px"}}/>
-            <h1>Selecciona un máximo 3 categorías</h1>
+            <h1>Selecciona un máximo de 3 categorías</h1>
             <div className="select-data_container_options">
                 {
                     categories.map((category:Category) => (
