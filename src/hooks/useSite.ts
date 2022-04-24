@@ -7,7 +7,6 @@ export const useSite = () => {
 
     useEffect(() => {
         getSites().then(res => {
-            console.log(res)
             setSites(res.sort((a:Site, b:Site) => a.name > b.name ? 1 : -1))
         })
     }, [])

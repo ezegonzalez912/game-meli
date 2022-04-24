@@ -20,6 +20,11 @@
             width: 120px;
         }
     }
+
+    &__data {
+        font-weight: 400;
+        margin-right: 15px;
+    }
 }
 
 @media (max-width: 350px) {

@@ -1,0 +1,71 @@
+@use "../settings/colors" as c;
+
+.finish-game {
+   &__container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      margin: auto;
+   }
+
+   &__title {
+      font-size: 20px;
+      font-weight: 400;
+      text-align: center;
+   }
+
+   &__subtitle {
+      color: c.$tertiary;
+      font-size: 35px;
+      font-weight: 400;
+   }
+
+   &__content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      
+      a {
+         color: c.$secundary;
+         transition: .3s;
+
+         &:hover {
+            transform: scale(1.05);
+         }
+      }
+   }
+
+   &__text-info {
+      font-size: 20px;
+      font-weight: 400;
+      text-align: center;
+      color: c.$grey_dark;
+   }
+
+   &__position {
+      color: c.$orange;
+      font-size: 18px;
+      font-weight: 500;
+   }
+
+   &__buttons {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 15px;
+
+      button {
+         width: auto;
+         padding: 10px 20px;
+      }
+
+      .btn-secondary {
+         background-color: c.$blue_light;
+         color: c.$secundary;
+      }
+   }
+}
+

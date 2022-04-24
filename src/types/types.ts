@@ -4,6 +4,7 @@ export interface Product {
     catalog_product_id: string;
     permalink: string;
     thumbnail: string;
+    points?: number;
 }
 
 export interface Category {

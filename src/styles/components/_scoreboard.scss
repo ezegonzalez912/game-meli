@@ -1,0 +1,145 @@
+@use "../settings/colors" as c;
+
+.scoreboard {
+   max-height: 500px;
+
+   &-header {
+      background-color: c.$primary;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+      color: c.$blue_dark;
+
+      .btn {
+         height: auto;
+         padding: 7px 10px;
+         
+      }
+      
+      h1 {
+         font-size: 20px;
+         font-weight: 600;
+      }
+
+      section {
+         display: flex;
+         align-items: center;
+         justify-content: space-between;
+         font-size: 14px;
+         font-weight: 600;
+         color: c.$blue_dark;
+         gap: 10px;
+         position: relative;
+
+         p {
+            font-size: 15px;
+         }
+
+         img {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: .3s;
+
+            &:hover {
+               transform: scale(1.1);
+            }
+         }
+
+         div {
+            position: absolute;
+            background-color: white;
+            padding: 5px 15px;
+            top: 40px;
+            right: -0px;
+            border-radius: 5px 3px 5px 5px;
+            box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.128);
+            min-width: 150px;
+            text-align: center;
+
+            button {
+               font-size: 15px;
+               padding: 5px 10px;
+               border: none;
+               background-color: transparent;
+               color: c.$secundary;
+               cursor: pointer;
+
+               &:hover {
+                  text-decoration: underline;
+               }
+            }
+         }
+ 
+      }
+   }
+
+   &-table {
+      padding: 20px;
+      overflow-y: scroll;
+
+      ul {
+         display: flex;
+         flex-direction: column;
+         gap: 10px;
+         list-style: none;
+         width: 100%;
+
+         li {
+            border-radius: 5px;
+            width: 100%;
+            padding: 10px;
+            border: 1px solid c.$grey_light;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            justify-content: space-between;
+
+            .scoreboard-left-data {
+               display: flex;
+               gap: 8px;
+               flex-direction: column;
+               font-size: 19px;
+               color: c.$grey_dark;
+               font-weight: 400;
+
+               @media screen and (max-width: 500px) {
+                  font-size: 15px;
+               }
+
+            }
+
+            .scoreboard-right-data {
+               display: flex;
+               flex-wrap: wrap;
+               gap: 5px;
+               justify-content: flex-end;
+
+               p{
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  background-color: c.$blue_light;
+                  font-weight: 500;
+                  padding: 0 10px;
+                  border-radius: 5px;
+                  color: c.$secundary;
+                  font-size: 12px;
+                  height: 25px;
+
+                  @media screen and (max-width: 500px) {
+                     font-size: 10px;
+                     padding: 0 7px;
+                  }
+              }
+            }
+         }
+
+         .table-active {
+            border-color: c.$orange;
+            box-shadow: 0px 0px 6px rgba(172, 96, 14, 0.451);
+         }
+      }
+   }
+}
