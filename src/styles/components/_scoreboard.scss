@@ -3,6 +3,12 @@
 .scoreboard {
    max-height: 500px;
 
+   @media (max-width: 600px) {
+      & {
+         min-height: 600px;
+      }
+   }
+
    &-header {
       background-color: c.$primary;
       display: flex;

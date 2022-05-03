@@ -26,7 +26,7 @@ export const FinishGame: React.FC<Props> = ({
   const { handleOpenModal } = useContext(modalContext);
   const { scoreboard, setScoreboard } = useContext(scoreboardContext);
 
-  const linkTwitter = "https://twitter.com/intent/tweet?url=https://www.instagram.com/&text=Gane"
+  const linkTwitter = `https://twitter.com/intent/tweet?text=%C2%A1Hice%20${points}%20puntos%20en%20precio%20justo!%20Juega%20en%3A&url=https%3A%2F%2Fezegonzalez912.github.io%2Fgame-meli%2F`;
 
   const addScore = async (data: any) => {
     addDoc(collection(db, "data"), data)
