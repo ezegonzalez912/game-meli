@@ -58,6 +58,7 @@
             box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.128);
             min-width: 150px;
             text-align: center;
+            z-index: 10000;
 
             button {
                font-size: 15px;
@@ -77,8 +78,9 @@
    }
 
    &-table {
-      padding: 20px;
       overflow-y: scroll;
+      padding: 20px;
+      padding-top: 0;
 
       ul {
          display: flex;
@@ -139,6 +141,61 @@
          .table-active {
             border-color: c.$orange;
             box-shadow: 0px 0px 6px rgba(172, 96, 14, 0.451);
+         }
+      }
+   }
+
+   .filters {
+      &-container {
+         padding: 20px;
+         display: flex;
+         justify-content: space-between;
+         align-items: center;
+         box-shadow: 0 4px 5px -2px rgba(0, 0, 0, 0.061);
+         z-index: 900;
+         
+         @media (max-width: 600px) {
+            & {
+               padding: 10px 20px;
+               flex-direction: column;
+               justify-content: flex-start;
+               align-items: flex-start;
+               gap: 10px;
+            }
+         }
+            
+      }
+
+      &-title {
+         font-size: 18px;
+         font-weight: 600;
+         color: c.$grey_dark;
+
+         @media (max-width: 600px) {
+            & {
+               font-size: 14px;
+            }
+         }
+      }
+
+      &-filter {
+         display: flex;
+         flex-direction: row;
+         align-items: center;
+         font-size: 13px;
+         gap: 5px;
+
+         select {
+            border: none;
+            border: 1px solid c.$grey_light;
+            border-radius: 5px;
+            padding: 5px;
+            cursor: pointer;
+
+            &:active, &:focus {
+               border: 2px solid c.$secundary;
+               padding: 4px;
+            }
          }
       }
    }

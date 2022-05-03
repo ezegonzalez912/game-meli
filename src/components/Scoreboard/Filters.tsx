@@ -7,6 +7,8 @@ interface Props {
    setFilters: (filters: any) => void;
 }
 
+const namespace = "filters";
+
 export const Filters:React.FC<Props> = ({
    filters,
    setFilters
@@ -16,9 +18,9 @@ export const Filters:React.FC<Props> = ({
   const categories = useCategories();
 
   return (
-    <div>
-      <p>Filtrar por:</p>
-      <label>
+    <div className={`${namespace}-container`}>
+      <p className={`${namespace}-title`}>Ordenar por:</p>
+      <label className={`${namespace}-filter`}>
         Pais
         <select name="pais" onChange={(e) => setFilters({...filters, country: e.target.value})}>
         <option value="all">Todos</option>
@@ -27,7 +29,7 @@ export const Filters:React.FC<Props> = ({
           ))}
         </select>
       </label>
-      <label>
+      <label className={`${namespace}-filter`}>
         Categoria
         <select name="pais" onChange={(e) => setFilters({...filters, category: e.target.value})}>
         <option value="all">Todas</option>

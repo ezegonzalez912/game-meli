@@ -17,3 +17,23 @@ body{
     min-width: 300px;
     overflow-x: hidden;
 }
+
+*::-webkit-scrollbar {
+    width: 8px;
+}
+   
+*::-webkit-scrollbar-track {
+    transition: .2s;
+    
+    &:hover {
+        background-color: rgb(245, 245, 245);
+    }
+
+}
+   
+*::-webkit-scrollbar-thumb {
+    border-radius: 20px;
+    transition: .2s;
+    background-color: rgba(131, 131, 131, 0.505);
+    cursor: pointer;
+}
